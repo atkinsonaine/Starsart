@@ -1,5 +1,6 @@
 /* ===== Shared color palette ===== */
 :root {
+  --font-family-base: Arial, sans-serif;
   --color-page: #f4f4f4;
   --color-text: #222;
   --color-ink: #141518;
@@ -20,6 +21,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: var(--font-family-base);
 }
 
 img {
@@ -28,7 +30,7 @@ img {
 
 /* Page background and default text */
 body {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-family-base);
   margin: 0;
   background: var(--color-page);
   color: var(--color-text);
@@ -205,7 +207,6 @@ main {
   padding: 4rem 2rem;
   border-radius: 12px;
   text-align: center;
-  font-family:caveat, cursive;
 }
 
 /* Animated heading and paragraph text */
