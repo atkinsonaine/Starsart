@@ -18,26 +18,7 @@ I wanted each page to have its own purpose while still looking like it belonged 
 How I Organized My Files
 I created separate HTML files for each webpage and CSS files to control the appearance of the pages.
 I also created folders to organize my photographs and other website images.
-My final portfolio is built like this  
-Starsart/
-│
-├── index.html
-├──art-pieces.html 
-├── contact..html
-├── commisons.html
-├── pet-photography.html
 
-│
-├── style.css
-├
-│
-├── images/
-│   ├── pets/
-│   ├── Artist/
-│   └── Art gallery 
- ├── script.js
-│
-└── README.md
 Organizing my files helped me understand how websites are structured and how different files connect to one another.
 It also made it easier to find photographs, update my code, and troubleshoot problems.
 
