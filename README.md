@@ -1,10 +1,10 @@
  Starsart – My Personal Website Portfolio
+
+ 
 Introduction: The Beginning of My Website
-Starsart is a personal website portfolio that I created as part of my web development class. This showcase art that I’ve worked on throughout the quarter of class.When I first started this project, I wanted to create something that represented me, my creativity, my interests, and the things that are important in my life.
-I didn’t want to create a website that was just a collection of assignments. I wanted to build something personal that I could continue developing as I learned more about technology and web development.
-I decided to create different sections throughout my website to introduce myself, showcase my projects, and share my photography. One of the things I wanted to include was a photography gallery featuring my dogs, puppies, and cats. This gave me an opportunity to combine something I enjoy personally with the technical skills I was learning in class.
-Throughout the creation of Starsart, I learned how HTML, CSS, and JavaScript work together. I also learned about website layouts, responsive design, accessibility, forms, navigation, and how to publish a website using GitHub Pages.
-This README explains how I applied the concepts I learned in class while building my personal website, the steps I took, and the things I learned along the way.
+Starsart is a personal website portfolio that I created as part of my web development class. This showcases art and photography that I’ve worked on throughout the quarter of class. When I first started this project, I wanted to create something that represented me, my creativity, my interests, and the things that are important in my life while having easy accessibility to its users.
+As my first website I create a website that was just a collection of assignments and what I learned while applying all those to the website. On this portfolio I applied all these skills and  built something personal that I could continue developing as I learned more about technology and web development.
+I decided to create different sections throughout my website to introduce myself, showcase my projects, and share my photography. One of the things I wanted to include was a photography gallery featuring my dogs, puppies.
 
 1. Planning and Organizing My Website - 11/10/2026
 Before I started building the different pages, I needed to understand how to organize my website.
