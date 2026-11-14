@@ -52,7 +52,7 @@ I decided to separate my content into different webpages so visitors could easil
 My website includes:
 Home: The main page where visitors are introduced to my website.
 About Me: A section where I share information about myself.
-Commisons|Art Gallery|Pet Photography: A place to showcase my schoolwork, projects, and things I have created.
+Commisons | Art Gallery| Pet Photography : A place to showcase my schoolwork, projects, and things I have created.
 Pet Photography: A photography gallery where I share pictures of my animals.
 I wanted each page to have its own purpose while still looking like it belonged to the same website.
 How I Organized My Files
@@ -69,7 +69,7 @@ Creating My Webpages
 I used HTML to build each individual page of Starsart.
 For example, on my homepage, I used headings and paragraphs to introduce the website and organize the content.
 On my About Me page, I used headings and paragraphs to share personal information.
-On my Projects page Commisons|Art Gallery|Pet Photography:  I created sections to organize the different projects I wanted to showcase. I used HTML to organize my photographs into separate sections of my Art Gallery and Pet Photography page 
+On my Projects page  Commisons| Art Gallery| Pet Photography:  I created sections to organize the different projects I wanted to showcase. I used HTML to organize my photographs into separate sections of my Art Gallery and Pet Photography page 
 Learning Semantic HTML
 One important thing I learned in Mr Renna's class was that HTML elements have different purposes and to build a structure.
 I started using elements such as:
@@ -116,7 +116,7 @@ I learned that keeping images organized is important because HTML needs to know 
 Step 2: Adding Images With HTML
 I learned how to use the <img> element to display photographs.
 Example:
-<img src="images/pets/kilo-bow.jpg"
+<img src="kilo-bow.jpg"
      alt="Kilo sitting outside with a bow on">
 
 I learned that the src attribute tells the browser where the photograph is located.
