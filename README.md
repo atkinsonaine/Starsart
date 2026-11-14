@@ -1,10 +1,50 @@
  Starsart – My Personal Website Portfolio
+
+
 Introduction: The Beginning of My Website
-Starsart is a personal website portfolio that I created as part of my web development class. This showcase art that I’ve worked on throughout the quarter of class.When I first started this project, I wanted to create something that represented me, my creativity, my interests, and the things that are important in my life.
-I didn’t want to create a website that was just a collection of assignments. I wanted to build something personal that I could continue developing as I learned more about technology and web development.
-I decided to create different sections throughout my website to introduce myself, showcase my projects, and share my photography. One of the things I wanted to include was a photography gallery featuring my dogs, puppies, and cats. This gave me an opportunity to combine something I enjoy personally with the technical skills I was learning in class.
-Throughout the creation of Starsart, I learned how HTML, CSS, and JavaScript work together. I also learned about website layouts, responsive design, accessibility, forms, navigation, and how to publish a website using GitHub Pages.
-This README explains how I applied the concepts I learned in class while building my personal website, the steps I took, and the things I learned along the way.
+Starsart is a personal website portfolio that I created as part of my web development class. This showcases art and photography that I’ve worked on throughout the quarter of class. When I first started this project, I wanted to create something that represented me, my creativity, my interests, and the things that are important in my life while having easy accessibility to its users.
+As my first website I created a website that was just a collection of assignments and what I learned while applying all those to the website. In this portfolio I applied all these skills and  built something personal that I could continue developing as I learned more about technology and web development.
+I decided to create different sections throughout my website to introduce myself, showcase my projects, and share my photography. One of the things I wanted to include was a photography gallery featuring my dogs, puppies.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 1. Planning and Organizing My Website - 11/10/2026
 Before I started building the different pages, I needed to understand how to organize my website.
@@ -12,32 +52,13 @@ I decided to separate my content into different webpages so visitors could easil
 My website includes:
 Home: The main page where visitors are introduced to my website.
 About Me: A section where I share information about myself.
-Commisons|Art Gallery|Pet Photography: A place to showcase my schoolwork, projects, and things I have created.
+Commisons | Art Gallery| Pet Photography : A place to showcase my schoolwork, projects, and things I have created.
 Pet Photography: A photography gallery where I share pictures of my animals.
 I wanted each page to have its own purpose while still looking like it belonged to the same website.
 How I Organized My Files
 I created separate HTML files for each webpage and CSS files to control the appearance of the pages.
 I also created folders to organize my photographs and other website images.
-My final portfolio is built like this  
-Starsart/
-│
-├── index.html
-├──art-pieces.html 
-├── contact..html
-├── commisons.html
-├── pet-photography.html
 
-│
-├── style.css
-├
-│
-├── images/
-│   ├── pets/
-│   ├── Artist/
-│   └── Art gallery 
- ├── script.js
-│
-└── README.md
 Organizing my files helped me understand how websites are structured and how different files connect to one another.
 It also made it easier to find photographs, update my code, and troubleshoot problems.
 
@@ -48,7 +69,7 @@ Creating My Webpages
 I used HTML to build each individual page of Starsart.
 For example, on my homepage, I used headings and paragraphs to introduce the website and organize the content.
 On my About Me page, I used headings and paragraphs to share personal information.
-On my Projects page Commisons|Art Gallery|Pet Photography:  I created sections to organize the different projects I wanted to showcase. I used HTML to organize my photographs into separate sections of my Art Gallery and Pet Photography page 
+On my Projects page  Commisons| Art Gallery| Pet Photography:  I created sections to organize the different projects I wanted to showcase. I used HTML to organize my photographs into separate sections of my Art Gallery and Pet Photography page
 Learning Semantic HTML
 One important thing I learned in Mr Renna's class was that HTML elements have different purposes and to build a structure.
 I started using elements such as:
@@ -57,6 +78,7 @@ I started using elements such as:
 <main> for the main content.
 <section> to separate different areas of my website.
 <footer> for information at the bottom of my pages.
+
 <h1> and <h2> for headings.
 <p> for paragraphs.
 <img> to display photographs.
@@ -67,10 +89,10 @@ I learned how to use anchor elements with the href attribute to connect my pages
 
 <nav>
     <a href="index.html">Home</a>
-    <a href="commisons.html">My commission page</a>
+    <a href="projects/commissions.html">My commission page</a>
     <a href="contact.html">Contact me </a>
-    <a href="art-pieces.html"> Explore my Art Pieces </a>
-    <a href="pet-photography.html"> Pet Photography</a>
+    <a href="projects/art-pieces.html"> Explore my Art Pieces </a>
+    <a href="projects/pet-photography.html"> Pet Photography</a>
 </nav>
 This allowed me to create navigation links that connect the different parts of my website.
 I also learned that the file names and paths must be correct. If a link points to the wrong file, the webpage may not open.
@@ -94,8 +116,11 @@ I learned that keeping images organized is important because HTML needs to know 
 Step 2: Adding Images With HTML
 I learned how to use the <img> element to display photographs.
 Example:
-<img src="images/pets/kilo.jpg"
-     alt="Kilo sitting outside">
+<a href="images/pet-photos/kilo-bow.jpg">
+  <img src="images/pet-photos/kilo-bow.jpg"
+       alt="Kilo sitting outside with a bow on">
+</a>
+
 I learned that the src attribute tells the browser where the photograph is located.
 The alt attribute provides a description of the photograph for people who use screen readers.
 Step 3: Organizing My Photography Sections
@@ -304,8 +329,10 @@ I wanted to understand how someone using a screen reader or keyboard navigation 
 Adding Alt Text to My Photographs
 Because my website includes a lot of personal photographs, I learned that images should have alternative text.
 Example:
-<img src="images/pets/kilo.jpg"
-     alt="Kilo sitting outside posing for a photo session ">
+<a href="images/pet-photos/kilo-grey-black-bandana.jpg">
+  <img src="images/pet-photos/kilo-grey-black-bandana.jpg"
+       alt="Kilo sitting outside posing for a photo session">
+</a>
 This gives screen readers a description of the photograph.
 I learned that alt text should describe the important information in an image rather than simply repeating the file name.
 Using Proper Headings
@@ -361,15 +388,15 @@ For example, if I use light-colored text on a light background, some visitors ma
 I learned to look at the relationship between the text color and background color.
 When WAVE identified contrast concerns, I could go back into my CSS and adjust the colors.
 This example uses dark text on a light background and white text on a darker button background.
-Here is my report for each page 
+Here is my report for each page
 
 Main page- https://wave.webaim.org/report#/https://atkinsonaine.github.io/Starsart/
 
 Contact me page- https://wave.webaim.org/report#/https://atkinsonaine.github.io/Starsart/contact.html
 
-Commission page - https://wave.webaim.org/report#/https://atkinsonaine.github.io/Starsart/commissions.html 
+Commission page - https://wave.webaim.org/report#/https://atkinsonaine.github.io/Starsart/projects/commissions.html
 
-Pet photography page- 
+Pet photography page- https://wave.webaim.org/report#/https://atkinsonaine.github.io/Starsart/projects/pet-photography.html
 
 
 Step 4: Making Changes
@@ -379,7 +406,7 @@ After reviewing the results, I learned to return to my code and make corrections
 -Correcting heading organization.
 -Adding form labels.
 -Making links easier to understand.
-= adding accessibility 
+= adding accessibility
 
 
 Step 5: Testing Again
@@ -435,7 +462,7 @@ I also learned that there is always something new to learn in technology.
 These are skills I hope to continue developing as I learn more about web development.
 
  My Final Reflection
-Creating Starsart  portfolio has been more than just completing a class assignment for me. It has given me an opportunity to take what I am learning and turn it into something I can actually see, interact with, and continue building to share with others 
+Creating Starsart  portfolio has been more than just completing a class assignment for me. It has given me an opportunity to take what I am learning and turn it into something I can actually see, interact with, and continue building to share with others
 When I first started learning HTML and CSS, I was still trying to understand how all the different pieces of a website connected. As I continued working through my assignments, I started recognizing how the things I learned in class could be applied to my own website.
 I especially enjoyed being able to include my own photographs and artwork to create something that represents my interests. I also learned that building a website involves more than just design. It requires organization, problem-solving, accessibility, testing, and understanding how people will interact with what you create.
 There were challenges along the way, and I didn’t always get things right the first time. However, those experiences helped me learn how to troubleshoot, make changes, and become more comfortable with coding.
