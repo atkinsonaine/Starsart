@@ -3,8 +3,48 @@
  
 Introduction: The Beginning of My Website
 Starsart is a personal website portfolio that I created as part of my web development class. This showcases art and photography that I’ve worked on throughout the quarter of class. When I first started this project, I wanted to create something that represented me, my creativity, my interests, and the things that are important in my life while having easy accessibility to its users.
-As my first website I create a website that was just a collection of assignments and what I learned while applying all those to the website. On this portfolio I applied all these skills and  built something personal that I could continue developing as I learned more about technology and web development.
+As my first website I created a website that was just a collection of assignments and what I learned while applying all those to the website. In this portfolio I applied all these skills and  built something personal that I could continue developing as I learned more about technology and web development.
 I decided to create different sections throughout my website to introduce myself, showcase my projects, and share my photography. One of the things I wanted to include was a photography gallery featuring my dogs, puppies.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 1. Planning and Organizing My Website - 11/10/2026
 Before I started building the different pages, I needed to understand how to organize my website.
@@ -38,6 +78,7 @@ I started using elements such as:
 <main> for the main content.
 <section> to separate different areas of my website.
 <footer> for information at the bottom of my pages.
+ 
 <h1> and <h2> for headings.
 <p> for paragraphs.
 <img> to display photographs.
@@ -75,8 +116,9 @@ I learned that keeping images organized is important because HTML needs to know 
 Step 2: Adding Images With HTML
 I learned how to use the <img> element to display photographs.
 Example:
-<img src="images/pets/kilo.jpg"
-     alt="Kilo sitting outside">
+<img src="images/pets/kilo-bow.jpg"
+     alt="Kilo sitting outside with a bow on">
+
 I learned that the src attribute tells the browser where the photograph is located.
 The alt attribute provides a description of the photograph for people who use screen readers.
 Step 3: Organizing My Photography Sections
@@ -423,3 +465,4 @@ There were challenges along the way, and I didn’t always get things right the 
 One of the most important things I am taking away from this project is that I don’t have to know everything right away. Web development is something I can continue learning through practice, creativity, and experience.
 I am proud of the foundation I have created with Starsart, and I look forward to continuing to improve it as I grow in my education and future career in technology.
 Starsart is a reflection of what I have learned so far and a starting point for everything I hope to create in the future.
+
