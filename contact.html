@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Me | Starsart</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="contact-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header>
+      <nav aria-label="Main navigation">
+        <div><strong>Starsart</strong></div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="services-dropdown">
+            <details>
+              <summary>Services</summary>
+              <ul>
+                <li><a href="index.html#services">All Services</a></li>
+                <li><a href="art-pieces.html">Art Pieces</a></li>
+                <li><a href="commissions.html">Commissions</a></li>
+                <li><a href="pet-photography.html">Pet Photography</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <section class="intro">
+        <div class="contact-heading-box">
+          <h1>Contact Me</h1>
+          <h2>Let's get in touch</h2>
+          <p class="contact-question">
+            Have a question about buying some of my artwork, a custom commissioned piece , or to inquire about pet photography session?
+            Send me an email and I'll be happy to hear from you.
+          </p>
+        </div>
+
+        <a
+          class="button"
+          href="mailto:aineatkinsonphoto@gmail.com?subject=Hello%20Starsart"
+        >Email me at aineatkinsonphoto@gmail.com or fill out the form below</a>
+      
+      </section>
+      <form aria-labelledby="contact-form-title">
+    <h2 id="contact-form-title" class="visually-hidden">Send a message</h2>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" autocomplete="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" autocomplete="email" required>
+
+    <label for="phone">Phone number (optional)</label>
+    <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel">
+
+    <fieldset>
+        <legend>Best way to reach you</legend>
+
+        <input type="radio" id="r-email" name="reply" value="email">
+        <label for="r-email">Email</label>
+
+        <input type="radio" id="r-phone" name="reply" value="phone">
+        <label for="r-phone">Phone</label>
+    </fieldset>
+
+    <label for="msg">Message</label>
+    <textarea id="msg" name="message" required></textarea>
+
+    <button type="submit">Send</button>
+</form>
+
+
+    </main>
+  </body>
+</html>

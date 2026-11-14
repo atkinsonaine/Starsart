@@ -1,0 +1,938 @@
+/* ===== Shared color palette ===== */
+:root {
+  --color-page: #f4f4f4;
+  --color-text: #222;
+  --color-ink: #141518;
+  --color-white: #fff;
+  --color-focus: #f1d000;
+  --color-gold: #e5cd1a;
+  --color-rainbow-red: #e63946;
+  --color-rainbow-orange: #f4a261;
+  --color-rainbow-yellow: #f1d000;
+  --color-rainbow-teal: #2a9d8f;
+  --color-rainbow-blue: #3977d5;
+  --color-rainbow-purple: #9b5de5;
+}
+
+/* ===== Shared styles: all pages ===== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Page background and default text */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: var(--color-page);
+  color: var(--color-text);
+  background: linear-gradient(
+    120deg,
+    #0b0000,
+    #1f023c,
+    #350350,
+    #0d0562,
+    #ecbd23,
+    #ba650b,
+    #aa0c0c
+  );
+  background-size: 300% 300%;
+  animation: rainbow-shift 12s ease infinite;
+}
+
+/* Header and navigation */
+header {
+  background: var(--color-ink);
+  color: var(--color-white);
+  padding: 1rem 2rem;
+}
+
+.skip-link {
+  position: absolute;
+  top: -4rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  background: white;
+  color: #111;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav li + li {
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  padding-left: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav > ul > li > a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+nav details {
+  position: relative;
+}
+
+nav summary {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  color: white;
+  cursor: pointer;
+  list-style: none;
+}
+
+nav summary::-webkit-details-marker {
+  display: none;
+}
+
+nav summary::after {
+  content: " ▾";
+  font-size: 0.8em;
+}
+
+nav details > ul {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: -0.75rem;
+  z-index: 10;
+  display: grid;
+  gap: 0.25rem;
+  min-width: 190px;
+  margin: 0;
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  background: var(--color-ink);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+nav details li + li {
+  border-left: 0;
+  padding-left: 0;
+}
+
+nav details a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+}
+
+nav details a:hover,
+nav details a:focus-visible {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+nav summary:focus-visible,
+nav details a:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Main content layout */
+main {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* intro section: home page and service detail pages */
+.intro {
+  background: linear-gradient(
+    120deg,
+    #7f1d1d,
+    #9a3412,
+    #854d0e,
+    #166534,
+    #075985,
+    #3730a3,
+    #6b21a8
+  );
+  background-size: 300% 300%;
+  animation: rainbow-shift 12s ease infinite;
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  font-family:caveat, cursive;
+}
+
+/* Animated heading and paragraph text */
+.intro h1,
+.intro p {
+  background-image: linear-gradient(
+    90deg,
+    #090909,
+    #252524,
+    #3d3d3d,
+    #8e8f8e,
+    #f0f0f1,
+    #434243,
+    #0b0b0b
+  );
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-shift 12s ease infinite;
+}
+
+/* Shared animation */
+@keyframes rainbow-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/*  heading spacing */
+.intro h1 {
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Shared buttons ===== */
+.button {
+  display: inline-block;
+  min-height: 44px;
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  background: #f8f8f7;
+  color: #111827;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 4px solid var(--color-gold);
+  font-weight: bold;
+}
+
+/* ===== Shared section and grid layout ===== */
+section {
+  margin-top: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  background-image: linear-gradient(
+    90deg,
+    #e88ae9,
+    #df5eb8,
+    #c139bc,
+    #b70fa9,
+    #dd8dd7,
+    #d35dd3,
+    #923282
+  );
+  background-size: 300% 100%;
+  animation: rainbow-shift 12s ease infinite;
+  padding: 1.5rem;
+}
+
+/*  outline used on the home and detail pages */
+.intro-text {
+  border: 3px solid white;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  nav > ul {
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+  }
+
+  nav li + li {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  nav details > ul {
+    top: calc(100% + 0.25rem);
+    left: 0;
+  }
+
+  main {
+    margin: 1rem auto;
+    padding: 0 0.75rem;
+  }
+
+  .intro {
+    padding: 1.5rem 1rem;
+  }
+
+  .intro-text {
+    padding: 1rem;
+  }
+
+  .grid {
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 0.75rem;
+  }
+
+  nav > ul {
+    gap: 0.25rem 0.75rem;
+  }
+
+  nav details > ul {
+    min-width: min(190px, calc(100vw - 1.5rem));
+  }
+
+  main {
+    padding: 0 0.5rem;
+  }
+
+  .intro h1 {
+    font-size: clamp(1.75rem, 8vw, 2.4rem);
+  }
+
+  .intro h2 {
+    font-size: clamp(1.25rem, 6vw, 1.75rem);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .photo-gallery {
+    padding: 0.75rem;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
+/* ===== Home page styles: index.html ===== */
+body.home-page .about {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border: 3px solid white;
+  border-radius: 12px;
+  background: linear-gradient(
+    120deg,
+    #0b0000,
+    #1f1f20,
+    #123b07,
+    #0e4928,
+    #063916,
+    #0d6810,
+    #033c05
+  );
+  background-size: 300% 300%;
+  animation: rainbow-shift 12s ease infinite;
+  color: white;
+  text-align: center;
+}
+
+body.home-page .about img {
+  display: block;
+  width: min(100%, 320px);
+  aspect-ratio: 1;
+  height: 320px;
+  object-fit: cover;
+  box-sizing: border-box;
+  margin: 0 auto 1rem;
+  border: 5px solid rgb(7, 6, 6);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body.home-page .card {
+  position: relative;
+  isolation: isolate;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background: white;
+  color: #090909;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+body.home-page .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  padding: 3px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    #777,
+    #111,
+    var(--color-rainbow-red),
+    var(--color-rainbow-orange),
+    var(--color-rainbow-yellow),
+    var(--color-rainbow-teal),
+    var(--color-rainbow-blue),
+    var(--color-rainbow-purple),
+    #111,
+    #777
+  );
+  background-size: 300% 100%;
+  animation: rainbow-shift 12s ease infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+body.home-page .card > * {
+  position: relative;
+  z-index: 1;
+}
+
+body.home-page .card h3 {
+  text-align: center;
+}
+
+body.home-page .card .button {
+  background: #000;
+  color: white;
+}
+
+body.home-page .contact {
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  background: linear-gradient(
+    120deg,
+    #061a40,
+    #0b3d91,
+    #1565c0,
+    #0284c7,
+    #38bdf8,
+    #1d4ed8,
+    #0b1f5b
+  );
+  background-size: 300% 300%;
+  animation: rainbow-shift 12s ease infinite;
+  color: white;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  body.home-page .about,
+  body.home-page .contact {
+    padding: 1rem;
+  }
+
+  body.home-page .card {
+    padding: 1rem;
+  }
+}
+
+/* ===== Art Pieces page styles: art-pieces.html ===== */
+/* Art Pieces page-specific styles can be added here. */
+
+/* ===== Commissions page styles: commissions.html ===== */
+body.commissions-page .commission-details {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 3px solid white;
+  border-radius: 12px;
+  background: linear-gradient(
+    120deg,
+    #0b0000,
+    #1f1f20,
+    #123b07,
+    #0e4928,
+    #063916,
+    #0d6810,
+    #033c05
+  );
+  background-size: 300% 300%;
+  animation: rainbow-shift 12s ease infinite;
+  color: white;
+}
+
+body.commissions-page .commission-rules {
+  margin: 1rem 0 2rem;
+  padding: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  background: linear-gradient(
+    120deg,
+    #061a40,
+    #0b3d91,
+    #1565c0,
+    #0284c7,
+    #1d4ed8,
+    #0b1f5b
+  );
+  background-size: 300% 300%;
+  animation: rainbow-shift 12s ease infinite;
+}
+
+body.commissions-page .commission-rules h3 {
+  background: none;
+  color: white;
+  -webkit-text-fill-color: white;
+  animation: none;
+}
+
+body.commissions-page .commission-rules ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  line-height: 1.6;
+}
+
+body.commissions-page .commission-details h3 {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-rainbow-red),
+    var(--color-rainbow-orange),
+    var(--color-rainbow-yellow),
+    var(--color-rainbow-teal),
+    var(--color-rainbow-blue),
+    var(--color-rainbow-purple)
+  );
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-shift 12s ease infinite;
+}
+
+
+body.commissions-page .commission-details h3,
+body.commissions-page .commission-details h4 {
+  color: white;
+}
+
+body.commissions-page .commission-details ul {
+  padding-left: 1.5rem;
+  line-height: 1.7;
+}
+
+body.commissions-page .commission-details a {
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+body.commissions-page .commission-details a:focus-visible {
+  outline: 2px solid #f1d000;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.commissions-page .commission-details {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  body.commissions-page .commission-details {
+    padding: 1rem;
+  }
+}
+
+/* ===== Contact page styles: contact.html ===== */
+body.contact-page .contact-email a {
+  color: white;
+  overflow-wrap: anywhere;
+}
+
+body.contact-page .contact-arrow {
+  display: block;
+  width: fit-content;
+  margin: 1.25rem auto 0;
+  color: #000;
+  font-size: 2.25em;
+  font-weight: 900;
+  line-height: 0;
+}
+
+body.contact-page .intro {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 3px solid white;
+  border-radius: 12px;
+  background: linear-gradient(
+    120deg,
+    #0b0000,
+    #1f1f20,
+    #123b07,
+    #0e4928,
+    #063916,
+    #0d6810,
+    #033c05
+  );
+  background-size: 300% 300%;
+  animation: rainbow-shift 12s ease infinite;
+  color: white;
+  text-align: center;
+}
+
+body.contact-page .contact-heading-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+  background: linear-gradient(
+    90deg,
+    var(--color-rainbow-red),
+    var(--color-rainbow-orange),
+    var(--color-rainbow-yellow),
+    var(--color-rainbow-teal),
+    var(--color-rainbow-blue),
+    var(--color-rainbow-purple),
+    #cf0606
+  );
+  border-radius: 12px;
+  border: 3px solid white;
+  background-size: 300% 300%;
+  animation: rainbow-shift 12s ease infinite;
+  padding: 1.5rem;
+}
+
+
+body.contact-page .contact-heading-box h1,
+body.contact-page .contact-heading-box h2 {
+  margin: 0;
+  background-image: linear-gradient(
+    90deg,
+    #2c052d,
+    #2d0923,
+    #340932,
+    #2c122a,
+    #1d0f1c,
+    #3a1e3a,
+    #1b161a
+  );
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-shift 12s ease infinite;
+}
+
+body.contact-page .contact-heading-box .contact-question {
+  margin: 0.5rem 0 0;
+  background: none;
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+  color: #2c052d;
+  -webkit-text-fill-color: #2c052d;
+  animation: none;
+  font-weight: bold;
+  text-align: center;
+}
+
+body.contact-page form {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 640px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 3px solid rgb(18, 16, 16);
+  border-radius: 12px; 
+  background: rgba(255, 255, 255, 0.96);
+  color: #222;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+body.contact-page form > label,
+body.contact-page form legend {
+  font-weight: bold;
+}
+
+body.contact-page form input:not([type="radio"]),
+body.contact-page form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #777;
+  border-radius: 6px;
+  font: inherit;
+}
+
+body.contact-page form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+body.contact-page form fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: 1px solid #777;
+  border-radius: 6px;
+}
+
+body.contact-page form input[type="radio"] {
+  margin: 0;
+  accent-color: #166534;
+}
+
+body.contact-page form input:focus-visible,
+body.contact-page form textarea:focus-visible,
+body.contact-page form button:focus-visible {
+  outline: 3px solid #166534;
+  outline-offset: 2px;
+}
+
+body.contact-page form button {
+  justify-self: start;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 3px solid #efc735;
+  border-radius: 8px; color: #000;
+  background: var(--color-ink);
+  color: white;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  body.contact-page form {
+    padding: 1.25rem;
+  }
+}
+
+/* ===== Pet Photography page styles: pet-photography.html ===== */
+body.pet-photography-page .photo-gallery {
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+body.pet-photography-page .photo-intro-heading {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+  padding: 1.5rem;
+  border: 3px solid white;
+  border-radius: 12px;
+  background: linear-gradient(
+    90deg,
+    var(--color-rainbow-red),
+    var(--color-rainbow-orange),
+    var(--color-rainbow-yellow),
+    var(--color-rainbow-teal),
+    var(--color-rainbow-blue),
+    var(--color-rainbow-purple),
+    #cf0606
+  );
+  background-size: 300% 300%;
+  animation: rainbow-shift 12s ease infinite;
+}
+
+body.pet-photography-page .photo-intro-heading h1,
+body.pet-photography-page .photo-intro-heading h2 {
+  margin: 0;
+  background-image: linear-gradient(
+    90deg,
+    #2c052d,
+    #2d0923,
+    #340932,
+    #2c122a,
+    #1d0f1c,
+    #3a1e3a,
+    #1b161a
+  );
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-shift 12s ease infinite;
+}
+
+body.pet-photography-page .intro {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 3px solid white;
+  border-radius: 12px;
+  background: linear-gradient(
+    120deg,
+    #0b0000,
+    #1f1f20,
+    #123b07,
+    #0e4928,
+    #063916,
+    #0d6810,
+    #033c05
+  );
+  background-size: 300% 300%;
+  animation: rainbow-shift 12s ease infinite;
+  color: rgb(20, 3, 3);
+  -webkit-text-fill-color: rgb(11, 5, 5);
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+  text-align: center;
+}
+body.pet-photography-page .photo-gallery-section {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border: 3px solid white;
+  border-radius: 12px;
+  background: linear-gradient(
+    120deg,
+    #061a40,
+    #0b3d91,
+    #1565c0,
+    #0284c7,
+    #38bdf8,
+    #1d4ed8,
+    #0b1f5b
+  );
+  background-size: 300% 300%;
+  animation: rainbow-shift 12s ease infinite;
+  color: white;
+  text-align: center;
+}
+
+body.pet-photography-page .photo-intro-heading .photo-session-description {
+  margin: 0.5rem 0 0;
+  background: none;
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+  color: #2c052d;
+  -webkit-text-fill-color: #2c052d;
+  animation: none;
+  text-align: center;
+}
+
+body.pet-photography-page .pet-photo {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+body.pet-photography-page .pet-photo img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  box-sizing: border-box;
+  margin: 0;
+  border: 5px solid rgb(7, 6, 6);
+  border-radius: inherit;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body.pet-photography-page .photo-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+}
+
+body.pet-photography-page .photo-caption h3,
+body.pet-photography-page .photo-caption p {
+  margin: 0.25rem 0;
+}
+
+@media (max-width: 768px) {
+  body.pet-photography-page .photo-gallery {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body.pet-photography-page .photo-gallery-section {
+    padding: 0.75rem;
+  }
+
+  body.pet-photography-page .pet-photo img {
+    height: 220px;
+  }
+}

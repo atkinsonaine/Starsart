@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Page title and stylesheet -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Photography | Starsart</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="pet-photography-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <!-- Site header and navigation -->
+    <header>
+      <nav aria-label="Main navigation">
+        <div><strong>Starsart</strong></div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="services-dropdown">
+            <details>
+              <summary>Services</summary>
+              <ul>
+                <li><a href="index.html#services">All Services</a></li>
+                <li><a href="art-pieces.html">Art Pieces</a></li>
+                <li><a href="commissions.html">Commissions</a></li>
+                <li><a href="pet-photography.html">Pet Photography</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <!-- Pet photography introduction -->
+      <section class="intro intro-text">
+        <div class="photo-intro-heading">
+          <h1>Pet Photography</h1>
+          <h2>Capture their personality through the lens</h2>
+          <p class="photo-session-description">
+            Ask about a photography session of your pet to capture special moments.
+          </p>
+        </div>
+        <a class="button" href="contact.html">Ask about a Photo session</a>
+       
+      </section>
+      <section class="photo-gallery-section" aria-labelledby="pet-gallery-title">
+        <h2 id="pet-gallery-title">Star's Photo Gallery</h2>
+        <p>Explore my  collection of photos of pets That I've captured over the years.</p>
+
+      <!-- Photo gallery -->
+      <div class="grid photo-gallery">
+
+        <!-- Kilo slideshow card -->
+        <div class="pet-photo">
+          <img
+            id="pet-photography-slideshow"
+            src="images/pet-photos/kilo-grey-black-bandana.jpg"
+            alt="Kilo, the black and white chihuahua"
+          />
+          <div class="photo-caption">
+            <h3>Kilo</h3>
+            
+          </div>
+        </div>
+        <!-- Nita slideshow card -->
+        <div class="pet-photo">
+          <img
+            id="nita-photography-slideshow"
+            src="images/pet-photos/nita-layingdown.jpg"
+            alt="Nita laying down outdoors"
+          />
+          <div class="photo-caption">
+            <h3>Nita</h3>
+           
+          </div>
+        </div>
+        <!-- Mercy's slideshow card  -->
+        <div class="pet-photo">
+          <img
+            id="mercy-photography-slideshow"
+            src="images/pet-photos/mercy-in-grass.jpg"
+            alt="mercy, the pitbull dog"
+          />
+         <div class="photo-caption">
+            <h3>Mercy</h3>
+          </div>
+        </div>
+          <!-- Philly's slideshow card -->
+        <div class="pet-photo">
+          <img
+            id="philly-photography-slideshow"
+            src="images/pet-photos/philly-with-ball.jpg"
+            alt="Philly sitting outdoors with a blue star bandana"
+          />
+          <div class="photo-caption">
+            <h3>Philly</h3>
+            
+          </div>
+        </div>
+        <!-- Papi slideshow card -->
+        <div class="pet-photo">
+          <img
+          id="papi-photography-slideshow"
+            src="images/pet-photos/papi-in-bushes2.jpg"
+            alt="Papi in the bushes wearing bandana"
+          />
+          <div
+          class="photo-caption">
+            <h3>Papi</h3>
+          
+          </div>
+        </div>
+        <!-- Puppies slideshow -->
+        <div class="pet-photo">
+          <img
+            id="puppies-photography-slideshow"
+            src="images/pet-photos/puppy-philly1.jpg"
+            alt="Philly a puppy outside on a rock at burney falls"
+          />
+          <div class="photo-caption">
+            <h3>Puppies</h3>
+        
+          </div>
+        </div>
+      </div>
+      </section>
+    </main>
+    <!-- Automatic photo slideshows -->
+    <script>
+      const photoSlideshowTimers = [];
+      const photoSlideshowUpdates = [];
+      const photoPrefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      let photoSlideshowsStopped = photoPrefersReducedMotion.matches;
+
+      function registerPhotoSlideshow(update) {
+        photoSlideshowUpdates.push(update);
+        if (!photoSlideshowsStopped) {
+          photoSlideshowTimers.push(window.setInterval(update, 5000));
+        }
+      }
+
+      function setPhotoSlideshowsStopped(stopped) {
+        photoSlideshowsStopped = stopped;
+        photoSlideshowTimers.forEach((timer) => window.clearInterval(timer));
+        photoSlideshowTimers.length = 0;
+        if (!stopped) {
+          photoSlideshowUpdates.forEach((update) => {
+            photoSlideshowTimers.push(window.setInterval(update, 5000));
+          });
+        }
+      }
+
+      photoPrefersReducedMotion.addEventListener("change", (event) => {
+        setPhotoSlideshowsStopped(event.matches);
+      });
+
+      setPhotoSlideshowsStopped(photoSlideshowsStopped);
+
+      // Kilo slideshow
+      const slides = [
+        { src: "images/pet-photos/kilo-grey-black-bandana.jpg", alt: "Kilo, the black and white chihuahua posing with a grey and black bandana outside" },
+        { src: "images/pet-photos/kilo-red-bandanna.jpg", alt: "Kilo, the black and white chihuahua posing with a red, orange, and black bandana outside" },
+        { src: "images/pet-photos/kilo-cactus.jpg", alt: "Kilo, the black and white chihuahua posing next to a cactus outside" },
+        { src: "images/pet-photos/kilo-bow.jpg", alt: "Kilo, the black and white chihuahua posing with a bow outside" },
+      ];
+      const slideshow = document.getElementById("pet-photography-slideshow");
+      let currentSlide = 0;
+
+      registerPhotoSlideshow(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        slideshow.src = slides[currentSlide].src;
+        slideshow.alt = slides[currentSlide].alt;
+      });
+
+      // Nita slideshow
+      const nitaSlides = [
+        { src: "images/pet-photos/nita-layingdown.jpg", alt: "Nita a pitbull mix laying down outdoors posing for aclose up shot" },
+        { src: "images/pet-photos/nita-highfive.jpg", alt: "Nita a pitbull mixgiving a high five" },
+        { src: "images/pet-photos/nita-in-nature.jpg", alt: "Nita a pitbull mix enjoying a mountain view posing for a photo" },
+        { src: "images/pet-photos/nita-laping-water.jpg", alt: "Nita lapping water" },
+        { src: "images/pet-photos/nita-with-portrait.jpg", alt: "Nita a pitbull mix with kilo a black and white chihuahua beside a portrait canvas" },
+      ];
+      const nitaSlideshow = document.getElementById("nita-photography-slideshow");
+      const nitaCaption = document.getElementById("nita-photo-caption");
+      let currentNitaSlide = 0;
+
+      registerPhotoSlideshow(() => {
+        currentNitaSlide = (currentNitaSlide + 1) % nitaSlides.length;
+        nitaSlideshow.src = nitaSlides[currentNitaSlide].src;
+        nitaSlideshow.alt = nitaSlides[currentNitaSlide].alt;
+        // nitaCaption.textContent = nitaSlides[currentNitaSlide].caption;
+      });
+    </script>
+    <script>
+      // Mercy slideshow
+    const mercySlides = [
+      { src: "images/pet-photos/mercy-in-grass.jpg", alt: "Mercy, the pitbull dog posing for a photo in the grass" },
+      { src: "images/pet-photos/mercy-on-beach.jpg", alt: "Mercy, the pitbull dog posing for a photo on the beach" },
+      { src: "images/pet-photos/mercy-playing.jpg", alt: "Mercy, the pitbull dog playing with a toy with her puppy" },
+    ];
+    const mercySlideshow = document.getElementById("mercy-photography-slideshow");
+    let currentMercySlide = 0;
+
+    registerPhotoSlideshow(() => {
+      currentMercySlide = (currentMercySlide + 1) % mercySlides.length;
+      mercySlideshow.src = mercySlides[currentMercySlide].src;
+      mercySlideshow.alt = mercySlides[currentMercySlide].alt;
+    });
+    </script>
+    <script>
+      // Philly slideshow
+      const phillySlides = [
+        { src: "images/pet-photos/philly-with-ball.jpg", alt: "Philly a pitbull mix playing fetch with a ball" },
+        { src: "images/pet-photos/philly-star.jpg", alt: "Philly a pitbull mix wearing a star bandana" },
+        { src: "images/pet-photos/philly-on-rock.jpg", alt: "Philly a pitbull mix posing for a photo on a rock" },
+        { src: "images/pet-photos/philly.jpg", alt: "Philly outdoors" }
+      ];
+      const phillySlideshow = document.getElementById("philly-photography-slideshow");
+      let currentPhillySlide = 0;
+
+      registerPhotoSlideshow(() => {
+        currentPhillySlide = (currentPhillySlide + 1) % phillySlides.length;
+        phillySlideshow.src = phillySlides[currentPhillySlide].src;
+        phillySlideshow.alt = phillySlides[currentPhillySlide].alt;
+      });
+    </script>
+    <script>
+      // Papi slideshow
+      const papiSlides = [
+        { src: "images/pet-photos/papi-in-bushes2.jpg", alt: "Papi a brown chihuahua in the bushes wearing bandana" },
+        { src: "images/pet-photos/papi-in-red-bandana.jpg", alt: "Papi a brown chihuahuawearing a red lion king  bandana" },
+        { src: "images/pet-photos/papi-in-bushes.jpg", alt: "Papi a brown chihuahua posing for a photo in the bushes" },
+        { src: "images/pet-photos/papi-with-brownbandana.jpg", alt: "Papi a brown chihuahua outdoors" }
+      ];
+      const papiSlideshow = document.getElementById("papi-photography-slideshow");
+      let currentPapiSlide = 0;
+
+      registerPhotoSlideshow(() => {
+        currentPapiSlide = (currentPapiSlide + 1) % papiSlides.length;
+        papiSlideshow.src = papiSlides[currentPapiSlide].src;
+        papiSlideshow.alt = papiSlides[currentPapiSlide].alt;
+      });
+    </script>
+    <script>
+      // Puppies slideshow
+      const puppiesSlides = [
+        { src: "images/pet-photos/puppy-philly1.jpg", alt: "Philly a tiny white with blue patches pitbull mix puppy outside on a rock posing for a photo at burney falls" },
+        { src: "images/pet-photos/puppy-philly2.jpg", alt: "Philly a tiny white with blue patches pitbull mix puppy outside on a rock posing for a photo at burney falls" },
+        { src: "images/pet-photos/puppy-philly3.jpg", alt: "Philly a white with blue patches pitbull mix puppy resting on a rock posing for a photo at burney falls" },
+        { src: "images/pet-photos/kiba.jpg", alt: "Kiba a German Shepherd puppy outdoors in the grass posing for a photo" },
+        { src:"images/pet-photos/lilbit1.jpg", alt: " Lil Bit a tiny grey pitbull puppy with a pink ribbon outdoors posing for a photo" },
+        { src: "images/pet-photos/lilbit2.jpg", alt: "Lil Bit a tiny grey pitbull puppy with a pink ribbon outdoors posing for a photo" },
+        { src: "images/pet-photos/copper1.jpg", alt: "Copper a tiny black pitbull puppy outdoors posing for a photo" },
+        { src: "images/pet-photos/copper2.jpg", alt: "Copper a tiny black pitbull puppy outdoors posing for a photo" }
+        
+      ];
+      const puppiesSlideshow = document.getElementById("puppies-photography-slideshow");
+      let currentPuppiesSlide = 0;
+
+      registerPhotoSlideshow(() => {
+        currentPuppiesSlide = (currentPuppiesSlide + 1) % puppiesSlides.length;
+        puppiesSlideshow.src = puppiesSlides[currentPuppiesSlide].src;
+        puppiesSlideshow.alt = puppiesSlides[currentPuppiesSlide].alt;
+      });
+    </script>
+
+  </body>
+</html>
