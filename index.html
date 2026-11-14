@@ -19,9 +19,9 @@
               <summary>Services</summary>
               <ul>
                 <li><a href="#services">All Services</a></li>
-                <li><a href="art-pieces.html">Art Pieces</a></li>
-                <li><a href="commissions.html">Commissions</a></li>
-                <li><a href="pet-photography.html">Pet Photography</a></li>
+                <li><a href="projects/art-pieces.html">Art Pieces</a></li>
+                <li><a href="projects/commissions.html">Commissions</a></li>
+                <li><a href="projects/pet-photography.html">Pet Photography</a></li>
               </ul>
             </details>
           </li>
@@ -53,17 +53,17 @@
           <div class="card">
             <h3>Art pieces</h3>
             <p>These are pieces of Art I've created. Some are inspired by nature or my faith in Jesus Christ, available for purchase</p>
-            <a class="button" href="art-pieces.html">Explore Art Pieces</a>
+            <a class="button" href="projects/art-pieces.html">Explore Art Pieces</a>
           </div>
           <div class="card">
             <h3>Commision's</h3>
             <p>Custom pieces created based on your specific requirements and vision on a canvas. Made on request</p>
-            <a class="button" href="commissions.html">Request a Commission</a>
+            <a class="button" href="projects/commissions.html">Request a Commission</a>
           </div>
           <div class="card">
             <h3>Pet Photography</h3>
             <p>Photography sessions of your pets to capture their unique personalities and moments. View previous photos</p>
-            <a class="button" href="pet-photography.html">Pet Photography</a>
+            <a class="button" href="projects/pet-photography.html">Pet Photography</a>
           </div>
         </div>
       </section>
@@ -76,48 +76,6 @@
       </section>
     </main>
 
-    <script>
-      const slides = [
-        { src: "images/artist-photos/aine.jpg", alt: "Aine, the artist" },
-        { src: "images/artist-photos/art-slide.jpg", alt: "Aine in hometown" },
-        { src: "images/artist-photos/aine-slide-2.png", alt: "Aine outdoors" },
-      ];
-      const slideshow = document.getElementById("about-slideshow");
-      let currentSlide = 0;
-      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      let slideshowTimer = null;
-
-      function showNextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        slideshow.src = slides[currentSlide].src;
-        slideshow.alt = slides[currentSlide].alt;
-      }
-
-      function startSlideshow() {
-        if (slideshowTimer !== null) return;
-        slideshowTimer = window.setInterval(showNextSlide, 3000);
-      }
-
-      function stopSlideshow() {
-        if (slideshowTimer !== null) {
-          window.clearInterval(slideshowTimer);
-          slideshowTimer = null;
-        }
-      }
-
-      if (prefersReducedMotion.matches) {
-        stopSlideshow();
-      } else {
-        startSlideshow();
-      }
-
-      prefersReducedMotion.addEventListener("change", (event) => {
-        if (event.matches) {
-          stopSlideshow();
-        } else {
-          startSlideshow();
-        }
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
